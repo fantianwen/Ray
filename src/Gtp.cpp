@@ -81,6 +81,8 @@ static void GTP_timesettings( void );
 static void GTP_timeleft( void );
 //  versionコマンドを処理
 static void GTP_version( void );
+//  winrate
+static void GTP_winrate ( void );
 //  showboardコマンドを処理
 static void GTP_showboard( void );
 //  kgs-genmove_cleanupコマンドを処理
@@ -123,6 +125,7 @@ const GTP_command_t gtpcmd[] = {
   { "time_left",           GTP_timeleft            },
   { "time_settings",       GTP_timesettings        },
   { "version",             GTP_version             },
+  { "winrate",             GTP_winrate             },
 };
 
 
@@ -536,6 +539,18 @@ static void
 GTP_version( void )
 {
   GTP_response(PROGRAM_VERSION, true);
+}
+
+
+//////////////////////////
+//  void GTP_winrate()  //
+//////////////////////////
+static void
+GTP_winrate( void ){
+  double la = GetLastWinrate();
+  char pos[100];
+  DoubleToString(la,pos);
+  GTP_response(pos, true);
 }
 
 

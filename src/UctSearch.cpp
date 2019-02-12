@@ -63,6 +63,7 @@ static int expand_threshold = EXPAND_THRESHOLD_19;
 static bool extend_time = false;
 
 static int lasted;
+static double winrate;
 
 int current_root; // 現在のルートのインデックス
 static mutex mutex_nodes[MAX_NODES];
@@ -420,6 +421,10 @@ StopPondering( void )
   }
 }
 
+double GetLastWinrate(){
+  return winrate;
+}
+
 
 int GetLastMove(int color){
   return lasted;
@@ -560,6 +565,9 @@ UctSearchGenmove( game_info_t *game, int color )
   }
 
   lasted = pos;
+
+  double m_winrate = (double)uct_node[current_root].win/uct_node[current_root].move_count;
+  winrate = m_winrate;
 
   // 最善応手列を出力
   PrintBestSequence(game, uct_node, current_root, color);

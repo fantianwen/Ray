@@ -303,7 +303,7 @@ PrintBestSequence( const game_info_t *game, const uct_node_t *uct_node, const in
   cerr << uct_child[index].win << "/" << uct_child[index].move_count << ")";
 
   current = uct_child[index].index;
-  
+
   while (current != NOT_EXPANDED) {
     uct_child = uct_node[current].child;
     child_num = uct_node[current].child_num;
@@ -363,6 +363,10 @@ PrintPlayoutInformation( const uct_node_t *root, const po_info_t *po_info, const
   if (finish_time != 0.0) {
     cerr << "Playout Speed      :  " << setw(7) << (int)(po_info->count / finish_time) << " PO/sec " << endl;
   }
+
+
+
+
 }
 
 
@@ -417,7 +421,7 @@ PrintPlayoutLimits( const double time_limit, const int playout_limit )
   if (!debug_message) return ;
 
   cerr << "Time Limit    : " << time_limit << " Sec" << endl;
-  cerr << "Playout Limit : " << playout_limit << " PO" << endl; 
+  cerr << "Playout Limit : " << playout_limit << " PO" << endl;
 }
 
 ////////////////////////////////////////

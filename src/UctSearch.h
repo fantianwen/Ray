@@ -177,6 +177,8 @@ int UctSearchGenmove( game_info_t *game, int color );
 
 int GetLastMove(int color);
 
+double GetLastWinrate();
+
 // 予測よみ
 void UctSearchPondering( game_info_t *game, int color );
 

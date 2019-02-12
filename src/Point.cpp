@@ -22,7 +22,7 @@ StringToInteger( const char *cpos )
   char alphabet;
   int x, y, pos;
 
-  if (strcmp(cpos, "pass") == 0 || 
+  if (strcmp(cpos, "pass") == 0 ||
       strcmp(cpos, "PASS") == 0){
     pos = PASS;
   } else {
@@ -40,6 +40,10 @@ StringToInteger( const char *cpos )
   return pos;
 }
 
+void
+DoubleToString(const double number,char *cpos){
+    sprintf(cpos,"%2.13f",number);
+}
 
 ////////////////////////////////////
 //  1次元表記から2次元表記へ変換  //
@@ -54,13 +58,13 @@ IntegerToString( const int pos, char *cpos )
     sprintf_s(cpos, 5, "%s", pass);
 #else
     snprintf(cpos, 5, "%s", pass);
-#endif	
+#endif
   } else if (pos == RESIGN) {
 #if defined (_WIN32)
     sprintf_s(cpos, 7, "%s", resign);
 #else
     snprintf(cpos, 7, "%s", resign);
-#endif	
+#endif
   } else {
     x = X(pos) - (OB_SIZE - 1);
     y = pure_board_size - (Y(pos) - OB_SIZE);

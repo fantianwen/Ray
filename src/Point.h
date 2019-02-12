@@ -15,10 +15,10 @@
 ////////////
 
 //  Y座標の文字
-const char gogui_x[] = { 
-  'I', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 
-  'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 
-  'U', 'V', 'W', 'X', 'Y', 'Z' 
+const char gogui_x[] = {
+  'I', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J',
+  'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+  'U', 'V', 'W', 'X', 'Y', 'Z'
 };
 
 
@@ -26,10 +26,12 @@ const char gogui_x[] = {
 //  関数  //
 ////////////
 
-//  2次元表記から1次元表記へ変換  
+//  2次元表記から1次元表記へ変換
 int StringToInteger( const char *cpos );
 
-//  1次元表記から2次元表記へ変換  
+//  1次元表記から2次元表記へ変換
 void IntegerToString( const int pos, char *cpos );
+
+void DoubleToString(const double number, char *cpos);
 
 #endif
