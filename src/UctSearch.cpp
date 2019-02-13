@@ -569,6 +569,7 @@ UctSearchGenmove( game_info_t *game, int color )
   double m_winrate = (double)uct_node[current_root].win/uct_node[current_root].move_count;
   winrate = m_winrate;
 
+
   // 最善応手列を出力
   PrintBestSequence(game, uct_node, current_root, color);
   // 探索の情報を出力(探索回数, 勝敗, 思考時間, 勝率, 探索速度)

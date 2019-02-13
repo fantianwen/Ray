@@ -266,6 +266,9 @@ PrintOwner( const uct_node_t *root, const int color, double *own )
 void
 PrintBestSequence( const game_info_t *game, const uct_node_t *uct_node, const int root, const int start_color )
 {
+
+
+
   game_info_t *search_result;
   int current = root;
   int index = -1;
@@ -279,17 +282,25 @@ PrintBestSequence( const game_info_t *game, const uct_node_t *uct_node, const in
   search_result = AllocateGame();
   CopyGame(search_result, game);
 
-  cerr << "Best Sequence : ";
 
   uct_child = uct_node[current].child;
   child_num = uct_node[current].child_num;
 
   for (int i = 0; i < child_num; i++) {
+
+    double mm_winrate = (double)uct_child[i].win/uct_child[i].move_count;
+
+    cerr << GOGUI_X(uct_child[i].pos)<<GOGUI_Y(uct_child[i].pos)<<":";
+
+    cerr << mm_winrate << "\n";
+
     if (uct_child[i].move_count > max) {
       max = uct_child[i].move_count;
       index = i;
     }
   }
+
+  cerr << "Best Sequence : ";
 
   if (uct_child[index].pos == PASS) cerr << "PASS";
   else cerr << GOGUI_X(uct_child[index].pos) << GOGUI_Y(uct_child[index].pos);
@@ -363,9 +374,6 @@ PrintPlayoutInformation( const uct_node_t *root, const po_info_t *po_info, const
   if (finish_time != 0.0) {
     cerr << "Playout Speed      :  " << setw(7) << (int)(po_info->count / finish_time) << " PO/sec " << endl;
   }
-
-
-
 
 }
 
