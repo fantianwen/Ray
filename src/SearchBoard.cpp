@@ -12,15 +12,15 @@ using namespace std;
 //  関数  //
 ////////////
 
-//  呼吸点の追加 
+//  呼吸点の追加
 static int AddLiberty( string_t *string, const int pos, const int head );
 
 //  隣接する敵連のIDの追加
 static void AddNeighbor( string_t *string, const int id );
 
 //  連に石を追加
-static void AddStoneToString( search_game_info_t *game, string_t *string, const int pos);
-//  石の追加  
+static void AddStoneToString( search_ game_info_t *game, string_t *string, const int pos);
+//  石の追加
 static void AddStone( search_game_info_t *game, const int pos, const int color, const int id );
 
 //  連の結合
@@ -38,10 +38,10 @@ static void MergeLiberty( string_t *dst, string_t *src );
 //  隣接する敵連のIDを結合
 static void MergeNeighbor( string_t *string, string_t *dst, string_t *src, const int id, const int rm_id );
 
-//  石の結合 
+//  石の結合
 static void MergeStones( search_game_info_t *game, const int id, const int rm_id );
 
-//  連の結合処理 
+//  連の結合処理
 static void MergeString( search_game_info_t *game, string_t *dst, string_t *src[3], const int n );
 
 //  変化のあった連の記録
@@ -56,7 +56,7 @@ static void RemoveNeighborString( string_t *string, const int id );
 //  連を取り除く処理
 static int RemoveString( search_game_info_t *game, string_t *string );
 
-//  連の復元 
+//  連の復元
 static void RestoreChain( search_game_info_t *game, const int id, const int stone[], const int stones, const int color );
 
 
@@ -124,7 +124,7 @@ IsLegalForSearch( const search_game_info_t *game, const int pos, const int color
 static void
 RecordString( search_game_info_t *game, int id )
 {
-  const int moves = game->moves;  
+  const int moves = game->moves;
   const string_t *string = game->string;
   const int *string_next = game->string_next;
   undo_record_t* rec = &game->undo[moves];
@@ -236,7 +236,7 @@ static int
 AddLiberty( string_t *string, const int pos, const int head )
 {
   int lib;
-  
+
   // 既に追加されている場合は何もしない
   if (string->lib[pos] != 0) return pos;
 
@@ -710,7 +710,7 @@ RemoveString( search_game_info_t *game, string_t *string )
     // 連を構成する次の石の座標を記録
     next = string_next[pos];
 
-    // 連の構成要素から取り除き, 
+    // 連の構成要素から取り除き,
     // 石を取り除いた箇所の連IDを元に戻す
     string_next[pos] = 0;
     string_id[pos] = 0;
@@ -767,7 +767,7 @@ RestoreChain( search_game_info_t *game, const int id, const int stone[], const i
     pos = stone[i];
     board[pos] = (char)color;
     game->string_id[pos] = id;
-    UpdateMD2Stone(game->pat, color, pos); 
+    UpdateMD2Stone(game->pat, color, pos);
   }
 
   for (int i = 0; i < stones - 1; i++) {
@@ -787,9 +787,9 @@ RestoreChain( search_game_info_t *game, const int id, const int stone[], const i
 	AddLiberty(new_string, neighbor4[j], lib_add);
       } else if (board[neighbor4[j]] == other) {
 	neighbor = string_id[neighbor4[j]];
-	RemoveLiberty(game, &string[neighbor], pos);	
+	RemoveLiberty(game, &string[neighbor], pos);
 	AddNeighbor(&string[neighbor], id);
-	AddNeighbor(&string[id], neighbor);	
+	AddNeighbor(&string[id], neighbor);
       }
     }
   }

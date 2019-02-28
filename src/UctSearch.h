@@ -3,10 +3,12 @@
 
 #include <atomic>
 #include <random>
+#include <string>
 
 #include "GoBoard.h"
 #include "ZobristHash.h"
 
+using namespace std;
 ////////////
 //  定数  //
 ////////////
@@ -178,6 +180,8 @@ int UctSearchGenmove( game_info_t *game, int color );
 int GetLastMove(int color);
 
 double GetLastWinrate();
+
+string GetCandidates();
 
 // 予測よみ
 void UctSearchPondering( game_info_t *game, int color );

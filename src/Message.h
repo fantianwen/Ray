@@ -4,6 +4,11 @@
 #include "GoBoard.h"
 #include "UctSearch.h"
 
+#include <string>
+
+using namespace std;
+
+static string candidates_char;
 
 //  エラーメッセージの出力の設定
 void SetDebugMessageMode( const bool flag );
@@ -11,19 +16,19 @@ void SetDebugMessageMode( const bool flag );
 //  盤面の表示
 void PrintBoard( const game_info_t *game );
 
-//  連の情報の表示              
-//    呼吸点の数, 座標          
-//    連を構成する石の数, 座標  
+//  連の情報の表示
+//    呼吸点の数, 座標
+//    連を構成する石の数, 座標
 //    隣接する敵の連のID
 void PrintString( const game_info_t *game );
 
-//  各座標の連IDの表示  
+//  各座標の連IDの表示
 void PrintStringID( const game_info_t *game );
 
 //  連リストの繋がりを表示(Debug用)
 void PrintStringNext( const game_info_t *game );
 
-//  合法手である候補手を表示 
+//  合法手である候補手を表示
 void PrintLegal( const game_info_t *game, const int color );
 
 //  オーナーの表示
@@ -49,5 +54,7 @@ void PrintPlayoutLimits( const double time_limit, const int playout_limit );
 
 //  再利用した探索回数の出力
 void PrintReuseCount( const int count );
+
+std::string GetCandidates();
 
 #endif

@@ -10,6 +10,7 @@
 #include "GoBoard.h"
 #include "Nakade.h"
 #include "UctSearch.h"
+#include "Message.h"
 #include "UctRating.h"
 #include "Message.h"
 #include "Point.h"
@@ -95,6 +96,8 @@ static void GTP_set_free_handicap( void );
 static void GTP_fixed_handicap( void );
 //  loadsgfコマンドを処理
 static void GTP_loadsgf( void );
+//  output candidates
+static void GTP_candidates( void );
 
 ////////////
 //  定数  //
@@ -126,6 +129,7 @@ const GTP_command_t gtpcmd[] = {
   { "time_settings",       GTP_timesettings        },
   { "version",             GTP_version             },
   { "winrate",             GTP_winrate             },
+  { "candidates",          GTP_candidates          }
 };
 
 
@@ -539,6 +543,12 @@ static void
 GTP_version( void )
 {
   GTP_response(PROGRAM_VERSION, true);
+}
+
+static void
+GTP_candidates( void ){
+
+  GTP_response(GetCandidates().c_str(), true);
 }
 
 
