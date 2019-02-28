@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02ebcccf-ed9d-4512-8ec9-932eeaaa74be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Gtp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gtp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Message.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Message.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Message.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchBoard.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchBoard.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UctSearch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/UctSearch.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UctSearch.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/UctSearch.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,10 +21,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GoBoard.h">
+        <entry file="file://$PROJECT_DIR$/src/Gtp.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4181">
-              <caret line="245" column="13" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="13" />
+            <state relative-caret-position="186">
+              <caret line="129" column="53" lean-forward="true" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -76,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SearchBoard.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+            <state relative-caret-position="167">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -107,8 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GTP_version</find>
-      <find>last</find>
       <find>Winning</find>
       <find>GTP_lastmove</find>
       <find>GetLastMove</find>
@@ -137,6 +130,8 @@
       <find>= s;</find>
       <find>GetCandidates</find>
       <find>_MESSAGE_H_</find>
+      <find>AddStoneToString</find>
+      <find>search_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -228,13 +223,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35365000" />
+    <option name="totallyTimeSpent" value="36012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16731302" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16731302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -246,7 +241,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2454054" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.42918918" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -307,19 +302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="311" column="24" selection-start-line="311" selection-start-column="24" selection-end-line="311" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gtp.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="550" column="24" selection-start-line="550" selection-start-column="24" selection-end-line="550" selection-end-column="24" />
-          <folding>
-            <element signature="e#9150#9184#0" expanded="true" />
-            <element signature="e#9499#9619#0" expanded="true" />
-            <element signature="e#14403#14500#0" expanded="true" />
-            <element signature="e#14962#15059#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -388,10 +370,17 @@
     <entry file="file://$PROJECT_DIR$/src/Seki.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Gtp.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="129" column="53" lean-forward="true" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchBoard.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        <state relative-caret-position="167">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>

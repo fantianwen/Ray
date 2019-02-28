@@ -19,7 +19,7 @@ static int AddLiberty( string_t *string, const int pos, const int head );
 static void AddNeighbor( string_t *string, const int id );
 
 //  連に石を追加
-static void AddStoneToString( search_ game_info_t *game, string_t *string, const int pos);
+static void AddStoneToString( search_game_info_t *game, string_t *string, const int pos);
 //  石の追加
 static void AddStone( search_game_info_t *game, const int pos, const int color, const int id );
 
