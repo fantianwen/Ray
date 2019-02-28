@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
+#include <string>
+#include <sstream>
 
 #include "Message.h"
 #include "Point.h"
@@ -267,8 +269,6 @@ void
 PrintBestSequence( const game_info_t *game, const uct_node_t *uct_node, const int root, const int start_color )
 {
 
-
-
   game_info_t *search_result;
   int current = root;
   int index = -1;
@@ -286,19 +286,32 @@ PrintBestSequence( const game_info_t *game, const uct_node_t *uct_node, const in
   uct_child = uct_node[current].child;
   child_num = uct_node[current].child_num;
 
+  std::ostringstream candidates_ss;
+
   for (int i = 0; i < child_num; i++) {
 
-    double mm_winrate = (double)uct_child[i].win/uct_child[i].move_count;
 
-    cerr << GOGUI_X(uct_child[i].pos)<<GOGUI_Y(uct_child[i].pos)<<":";
+    if(uct_child[i].win>0){
+      double mm_winrate = (double)uct_child[i].win/uct_child[i].move_count;
+      cerr << GOGUI_X(uct_child[i].pos)<<GOGUI_Y(uct_child[i].pos)<<":";
+      cerr << mm_winrate << "\n";
 
-    cerr << mm_winrate << "\n";
+      candidates_ss<<GOGUI_X(uct_child[i].pos)<<GOGUI_Y(uct_child[i].pos)<<"::"<<mm_winrate<<"||";
+    }
 
     if (uct_child[i].move_count > max) {
       max = uct_child[i].move_count;
       index = i;
     }
   }
+
+  std::string str = candidates_ss.str();
+
+  const char* ccstr = str.c_str();
+
+  candidates_char = str;
+
+  cerr<< str <<";";
 
   cerr << "Best Sequence : ";
 
@@ -441,4 +454,8 @@ PrintReuseCount( const int count )
   if (!debug_message) return ;
 
   cerr << "Reuse : " << count << " Playouts" << endl;
+}
+
+std::string GetCandidates(){
+  return candidates_char;
 }

@@ -425,7 +425,6 @@ double GetLastWinrate(){
   return winrate;
 }
 
-
 int GetLastMove(int color){
   return lasted;
 }
